@@ -15,25 +15,8 @@ import { useRouter } from "next/navigation";
 import apiService from "@/app/services/apiService";
 
 const AddPropertyModal = () => {
-<<<<<<< HEAD
   const router = useRouter();
   // state
-=======
-    const router = useRouter();
-    // state
-    
-    const [currentStep, setCurrentStep] = useState(1);
-    const [errors, setErrors] = useState<string[]>([]);
-    const [dataCategory, setDataCategory] = useState('');
-    const [dataTitle, setDataTitle] = useState('');
-    const [dataDescription, setDataDescription] = useState('');
-    const [dataPrice, setDataPrice] = useState('');
-    const [dataBedrooms, setDataBedrooms] = useState('');
-    const [dataBathrooms, setDataBathrooms] = useState('');
-    const [dataGuests, setDataGuests] = useState('');
-    const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
-    const [dataImage, setDataImage] = useState<File | null>(null);
->>>>>>> 2fe3073ef53eb2d0083ced5b4a7741fff9ca54b2
 
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState<string[]>([]);
@@ -272,7 +255,6 @@ const AddPropertyModal = () => {
             );
           })}
 
-<<<<<<< HEAD
           <CustomButton
             label="Previous"
             className="mb-2 bg-black hover:bg-gray-800"
@@ -297,6 +279,4 @@ const AddPropertyModal = () => {
   );
 };
 
-=======
->>>>>>> 2fe3073ef53eb2d0083ced5b4a7741fff9ca54b2
 export default AddPropertyModal;
