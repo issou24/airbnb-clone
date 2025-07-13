@@ -35,7 +35,10 @@ const SignupModal = () => {
                 signupModal.close();
                 router.push('/');
             } else {
-                const tmpErrors: string[] = Object.values(response).flat();
+                // Transforme toutes les valeurs d'erreur en strings, même si ce sont des arrays ou objets
+                const tmpErrors: string[] = Object.values(response)
+                    .flat()
+                    .map(val => typeof val === 'string' ? val : JSON.stringify(val));
                 setErrors(tmpErrors);
             }
         } catch (err: any) {
@@ -98,5 +101,3 @@ const SignupModal = () => {
 };
 
 export default SignupModal;
-
-
