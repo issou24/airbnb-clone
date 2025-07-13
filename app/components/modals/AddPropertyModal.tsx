@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation';
 import apiService from "@/app/services/apiService";
 
 const AddPropertyModal = () => {
-    //
+    const router = useRouter();
     // state
     
     const [currentStep, setCurrentStep] = useState(1);
