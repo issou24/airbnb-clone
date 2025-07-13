@@ -3,8 +3,8 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'http',
-                hostname: 'localhost',
+                protocol: 'https',
+                hostname: 'https://airbnb-clone-2-957822787686.europe-west9.run.app',
                 port:'8000',
                 pathname: '/**'
             }
