@@ -5,6 +5,11 @@ import Link from "next/link";
 const MyReservationsPage = async () => {
   const reservations = await apiService.get("/api/auth/myreservations/");
 
+  // ✅ Log des URLs d'images pour debug
+  reservations.forEach((reservation: any) => {
+    console.log("IMAGE URL:", reservation.property.image_url);
+  });
+
   return (
     <main className="max-w-[1500px] mx-auto px-6 pb-6">
       <h1 className="my-6 text-2xl">My reservations</h1>
@@ -12,10 +17,12 @@ const MyReservationsPage = async () => {
       <div className="space-y-4">
         {reservations.map((reservation: any) => {
           return (
-            <div className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl">
+            <div
+              key={reservation.id}
+              className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl"
+            >
               <div className="col-span-1">
                 <div className="relative overflow-hidden aspect-square rounded-xl">
-                  console.log("IMAGE URL:", reservation.property.image_url);
                   <Image
                     fill
                     src={reservation.property.image_url || "/beach_1.jpg"}
