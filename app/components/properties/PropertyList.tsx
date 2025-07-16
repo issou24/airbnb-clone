@@ -7,7 +7,8 @@ import PropertyListItem from "./PropertyListItem";
 export type PropertyType = {
   id: string;
   title: string;
-  image: string;
+  image?: string;
+  image_url?: string;
   price_per_night: number;
   is_favorite: boolean;
 };
@@ -54,8 +55,8 @@ const PropertyList: React.FC<PropertyListProps> = ({
 
     setProperties(
       tmpProperties?.data.map((property: PropertyType) => {
-        if (property.image == null) {
-          property.image = "/beach_1.jpg";
+        if (property.image_url == null) {
+          property.image_url = "/beach_1.jpg";
         }
 
         if (tmpProperties.favorites.includes(property.id)) {

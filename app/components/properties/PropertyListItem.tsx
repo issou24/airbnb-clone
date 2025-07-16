@@ -14,6 +14,12 @@ const PropertyListItem: React.FC<PropertyProps> = ({
 }) => {
   const router = useRouter();
 
+  // fallback image si image mal formée ou vide
+  const imageUrl =
+    property.image_url && property.image_url.startsWith("http")
+      ? property.image_url
+      : "/beach_1.jpg";
+
   return (
     <div
       className="cursor-pointer"
@@ -22,10 +28,10 @@ const PropertyListItem: React.FC<PropertyProps> = ({
       <div className="relative overflow-hidden aspect-square rounded-xl">
         <Image
           fill
-          src={property.image}
+          src={imageUrl}
           sizes="(max-width: 768px) 768px, (max-width: 1200px): 768px, 768px"
           className="hover:scale-110 object-cover transition h-full w-full"
-          alt="Beach house"
+          alt={property.title || "Property image"}
         />
 
         {markFavorite && (

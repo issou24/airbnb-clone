@@ -17,7 +17,7 @@ const MyReservationsPage = async () => {
                 <div className="relative overflow-hidden aspect-square rounded-xl">
                   <Image
                     fill
-                    src={reservation.property.image}
+                    src={reservation.property.image_url || "/beach_1.jpg"}
                     className="hover:scale-110 object-cover transition h-full w-full"
                     alt="Beach house"
                   />
