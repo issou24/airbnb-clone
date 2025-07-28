@@ -17,6 +17,7 @@
     "react-use-websocket": "^4.10.1",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
+    "tailwind": "^4.0.0",
     "world-countries": "^5.0.0",
     "zustand": "^4.5.5"
   },
