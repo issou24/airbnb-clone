@@ -8,9 +8,6 @@ const MyReservationsPage = async () => {
   // ✅ Log des URLs d'images pour debug
   reservations.forEach((reservation: any) => {
     console.log("IMAGE URL:", reservation.property.image_url);
-    console.log("Property object:", property);
-    console.log("Image URL:", property?.image_url);
-    console.log("Property keys:", Object.keys(property || {}));
   });
 
   return (
