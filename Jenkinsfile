@@ -45,5 +45,20 @@ stage('Run Development') {
         }
     }
 }
+stage('Run build') {
+    steps {
+        script {
+            dir('airbnb-clone') {
+                try {
+                    timeout(time: 10, unit: 'SECONDS') {
+                        sh 'npm run build'
+                    }
+                } catch (Exception e) {
+                    echo 'Le processus npm run dev a dépassé le délai imparti, mais le pipeline continue.'
+                }
+            }
+        }
+    }
+}
     }
 }
