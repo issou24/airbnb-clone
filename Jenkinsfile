@@ -1,22 +1,28 @@
 pipeline {
     agent any
     stages {
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Installer les dépendances
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Run Development') {
+            steps {
+                script {
+                    // Exécuter npm run dev
+                    sh 'npm run dev'
+                }
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building...'
-                // Ajoutez vos étapes de construction ici
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                // Ajoutez vos étapes de test ici
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Ajoutez vos étapes de déploiement ici
+                script {
+                    // Exécuter npm run build
+                    sh 'npm run build'
+                }
             }
         }
     }
